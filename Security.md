@@ -55,6 +55,16 @@ All interactions with `https://sgp.cloud.appwrite.io/v1/s3` from automated pipel
 - **Client Bundles:** Expose strictly `NEXT_PUBLIC_APPWRITE_PROJECT_ID` (`6accb26e001f6cc8b769`) and public endpoint URLs.
 - **Server Runtime:** `APPWRITE_API_KEY` is loaded exclusively within Next.js Route Handlers (`src/app/api/*`) and Server Components during server-side execution. It is never included in the browser bundle.
 
+### 2.4 Document-Level Security & OAuth Policies
+- **OAuth Callback Whitelisting:** Strict redirect URI hostname validation configured in Appwrite Console (`https://vikasdhavande.com/auth/callback` and `http://localhost:3000/auth/callback` in local dev). Untrusted redirection parameters are rejected.
+- **Comments & Reactions Collection Permissions:**
+  - `Permission.read(Role.any())`: Public reading allowed.
+  - `Permission.create(Role.users())`: Only authenticated users with verified OAuth accounts can post comments or reactions.
+  - `Permission.update(Role.user(userId))`: Users can only edit their own comments.
+  - `Permission.delete(Role.user(userId))`: Users can delete their own comments.
+  - **Admin Moderation:** Master API Key overrides allow Vikas to delete or hide flagged comments.
+- **CSRF & Session Cookie Hardening:** Appwrite session tokens stored in secure, `SameSite=Lax`, `HttpOnly` cookies.
+
 ---
 
 ## 3. HTTP Security Headers & Content Security Policy (CSP)

@@ -129,6 +129,18 @@ classDiagram
         +Calendar scheduler link
         +Social media icon group
     }
+    class HairlineSemiconductorFigure {
+        +Isometric SVG silicon die & bus traces
+        +Pointer tracking & coordinate projection
+        +Responsive viewBox & stroke scaling
+        +Smooth rest pose & active animation
+    }
+    class Blobatar {
+        +Deterministic string hasher (name/id seed)
+        +Organic cubic spline control points
+        +Vibrant gradient color palette
+        +Interactive hover animation and facial expressions
+    }
 ```
 
 ---

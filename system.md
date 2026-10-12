@@ -25,6 +25,8 @@
 - **`react` & `react-dom` (`^18.3.x`):** UI rendering engine.
 - **`node-appwrite` / `appwrite`:** Official Appwrite SDK for database and storage operations.
 - **`@aws-sdk/client-s3`:** Optional AWS SDK client for direct S3-compatible SigV4 operations against Appwrite Storage.
+- **`@lucasmarkes/hairline` (`^0.5.0`):** Interactive isometric line figures answering pointer movement for semiconductor & hardware/software visualizations.
+- **`blobatar` / `@blobatar/react`:** Deterministic fluid SVG generative avatars with hover motion physics (`https://blobatar.dev`).
 - **`clsx` & `tailwind-merge`:** Utility functions for dynamic className merging (`cn`).
 - **`lucide-react`:** Accessible SVG icon primitives.
 - **`next-themes`:** Hydration-safe theme switcher (Light / Dark / System).
@@ -70,6 +72,12 @@ NEXT_PUBLIC_APPWRITE_MEDIA_BUCKET=media
 APPWRITE_API_KEY=your_secret_api_key_here
 APPWRITE_DATABASE_ID=portfolio_db
 APPWRITE_COLLECTION_INQUIRIES=inquiries
+APPWRITE_COLLECTION_COMMENTS=comments
+APPWRITE_COLLECTION_REACTIONS=reactions
+
+# Appwrite OAuth Configuration
+NEXT_PUBLIC_APPWRITE_OAUTH_SUCCESS_URL=https://vikasdhavande.com/auth/callback
+NEXT_PUBLIC_APPWRITE_OAUTH_FAILURE_URL=https://vikasdhavande.com/auth/failure
 
 # Application Configuration
 NEXT_PUBLIC_SITE_URL=https://vikasdhavande.com

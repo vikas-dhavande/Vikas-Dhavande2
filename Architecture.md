@@ -26,12 +26,18 @@ graph TD
         Page --> Projects[Projects Showcase]
         Page --> Experience[Experience Timeline]
         Page --> Skills[Skills & Systems Matrix]
+        Page --> Reactions[Reactions & Comments Bar]
         Page --> Contact[Interactive Contact Form]
     end
 
     subgraph Appwrite Cloud BaaS Layer [Appwrite Cloud (Singapore - sgp)]
         AppwriteEndpoint["Appwrite API Gateway (https://sgp.cloud.appwrite.io/v1)"]
         
+        subgraph Appwrite Auth [Appwrite Auth Engine]
+            OAuth[OAuth 2.0 Providers<br/>Google | GitHub | LinkedIn]
+            UserSessions[(Active User Sessions)]
+        end
+
         subgraph Appwrite Storage (S3-Compatible) [Appwrite Storage]
             S3Gateway["S3-Compatible Endpoint (https://sgp.cloud.appwrite.io/v1/s3)"]
             BucketMedia[(Media Bucket)]
@@ -39,10 +45,13 @@ graph TD
             SigV4[SigV4 Authentication Engine]
         end
         
-        subgraph Appwrite Databases [Appwrite Databases]
+        subgraph Appwrite Databases & Realtime [Appwrite Databases & Realtime]
             DB[(Portfolio Database)]
             CollProjects[Projects Collection]
             CollInquiries[Inquiries Collection]
+            CollComments[Comments Collection]
+            CollReactions[Reactions Collection]
+            RealtimeWS[Realtime WebSocket Engine]
         end
     end
 
@@ -52,10 +61,13 @@ graph TD
         Rclone["Storage Tooling (rclone / AWS CLI)"]
     end
 
+    Nav -->|OAuth Trigger| OAuth
     Page -->|Server-side fetch / Hydration| AppwriteEndpoint
     Projects -->|Images & Diagrams| S3Gateway
     Hero -->|Resume PDF Download| S3Gateway
     Contact -->|Form Submission API| CollInquiries
+    Reactions -->|Post Comment / Toggle Reaction| DB
+    Reactions <-->|Live Updates| RealtimeWS
     AppwriteMCP <--> AppwriteEndpoint
     Rclone <--> S3Gateway
     S3Gateway --- SigV4

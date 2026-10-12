@@ -5,7 +5,7 @@
 - **Owner:** Vikas Dhavande
 - **Professional Positioning:** Senior Full Stack & AI Systems Engineer
 - **Profiles:** [LinkedIn: vikas-dhavande](https://www.linkedin.com/in/vikas-dhavande/) | [GitHub: @vikas-dhavande](https://github.com/vikas-dhavande)
-- **Primary Stack:** Next.js 14+ (App Router), TypeScript, Tailwind CSS, shadcn/ui (Preset `b0`, Base `aria`), Appwrite Cloud (Singapore Region).
+- **Primary Stack:** Next.js 14+ (App Router), TypeScript, Tailwind CSS, shadcn/ui (Preset `b0`, Base `aria`), Appwrite Cloud (Singapore Region), `@lucasmarkes/hairline`.
 
 ---
 

@@ -1,0 +1,1 @@
+export { SemiconductorFigure } from './SemiconductorFigure';

@@ -40,10 +40,11 @@ The primary goal is to present a polished, authoritative, and responsive portfol
 ## 4. Feature Specifications & Requirements
 
 ### 4.1 Hero & Identity Section
-- **Dynamic Headline & Pitch:** Clear role positioning ("Full Stack Engineer & System Architect").
+- **Dynamic Headline & Pitch:** Clear role positioning ("Senior Full Stack & AI Systems Engineer").
 - **Bio Summary:** Focused on scalable software, distributed systems, and modern AI application engineering.
+- **Interactive Centerpiece (`@lucasmarkes/hairline`):** Pointer-reactive isometric semiconductor and electronics line figure. Built as an interactive SVG canvas responding dynamically to cursor position, simulating silicon die signal lines, microarchitectural blocks, and bus traces.
 - **Direct Actions:** "View Projects", "Contact Me", and "Schedule a Call" buttons.
-- **Social Matrix:** Verified links to GitHub (`@vikas-dhavande`), LinkedIn, X / Twitter, and direct email.
+- **Social Matrix:** Verified links to GitHub (`@vikas-dhavande`), LinkedIn (`/in/vikas-dhavande`), X / Twitter, and direct email.
 - **Visual Avatar:** High-resolution portrait optimized with responsive sizes and modern aspect ratio.
 
 ### 4.2 Featured Projects Showcase
@@ -72,6 +73,27 @@ The primary goal is to present a polished, authoritative, and responsive portfol
 ### 4.6 Contact & Connection Hub
 - **Interactive Form / Contact Channels:** Direct email trigger, calendar scheduler integration, and copy-to-clipboard email utility.
 - **Response Confirmation:** Visual toast notification upon copying email or submitting messages.
+
+### 4.7 User Authentication, Social Reactions & Community Comments
+- **Appwrite OAuth Integration:** Seamless authentication supporting **Google**, **GitHub**, and **LinkedIn** OAuth providers.
+- **Persistent Header Access & Profile Menu:**
+  - Header login trigger showing "Sign In" button when unauthenticated.
+  - Authenticated state renders the user's avatar image, name, and provider badge with a sleek dropdown (Profile info, My Comments, Sign Out).
+- **Curated 5-Emoji Reaction Bar:**
+  - Interactive reaction bar across all Projects and Blog Posts: **Like (👍)**, **Love (❤️)**, **Fire (🔥)**, **Rocket (🚀)**, and **Mind-Blown (🤯)**.
+  - Active user toggling: Authenticated users can toggle reactions; live count updates instantly.
+  - Unauthenticated visitors are greeted with an inline prompt linking to OAuth providers.
+- **Community Commenting & Discussion Threads:**
+  - Authenticated visitors can submit comments with Markdown formatting on projects and posts.
+  - **Author Attribution:** Displays commenter's avatar, display name, verified OAuth badge (e.g. GitHub/LinkedIn icon), and timestamp.
+  - **Author Moderation & Ownership:** Commenters can edit or delete their own comments. Vikas holds administrative moderation rights to pin, hide, or delete any comment.
+- **Deterministic Blobatar Avatar Engine:**
+  - All community users, commenters, and header profiles receive procedural fluid SVG avatars using `Blobatar` (`@/components/ui/blobatar`), seeded deterministically by `user.name` or `user.id`.
+  - Zero reliance on external OAuth avatar image URLs, eliminating third-party image tracking and broken links while preserving visitor privacy.
+  - Interactive hover physics (`blobatar={{ animate: "hover" }}`) with distinctive color gradients and personality expressions.
+- **Realtime Synchronization:**
+  - Leverages **Appwrite Realtime** WebSockets (`databases.[db].collections.[comments|reactions].documents`).
+  - Reaction counter badges and incoming comments update dynamically across all active client sessions without requiring manual page refresh.
 
 ---
 

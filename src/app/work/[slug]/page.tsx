@@ -6,6 +6,7 @@ import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
+import { EngagementBlock } from "@/components/engagement";
 
 interface WorkParams {
   params: {
@@ -122,6 +123,7 @@ export default function Project({ params }: WorkParams) {
           </Text>
         </Flex>
         <CustomMDX source={post.content} />
+        <EngagementBlock targetId={`project-${params.slug}`} title={post.metadata.title} />
       </Column>
       <ScrollToHash />
     </Column>

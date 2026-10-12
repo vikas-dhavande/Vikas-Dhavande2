@@ -6,6 +6,7 @@ import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
+import { EngagementBlock } from "@/components/engagement";
 
 interface BlogParams {
   params: {
@@ -109,6 +110,7 @@ export default function Blog({ params }: BlogParams) {
       </Row>
       <Column as="article" fillWidth>
         <CustomMDX source={post.content} />
+        <EngagementBlock targetId={`blog-${params.slug}`} title={post.metadata.title} />
       </Column>
       <ScrollToHash />
     </Column>

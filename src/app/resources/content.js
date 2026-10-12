@@ -14,7 +14,7 @@ const person = {
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Tech Dispatch</>,
+  title: <>Subscribe to {person.firstName}&apos;s Tech Dispatch</>,
   description: (
     <>
       Insights on modern full-stack engineering, cloud architecture, AI workflows, and building
@@ -55,7 +55,7 @@ const home = {
   headline: <>Engineering Scalable Web Systems & Intelligent Experiences</>,
   subline: (
     <>
-      I'm Vikas, a Software Engineer specializing in <InlineCode>Next.js</InlineCode>, cloud
+      I&apos;m Vikas, a Software Engineer specializing in <InlineCode>Next.js</InlineCode>, cloud
       architectures, and AI-enabled product ecosystems. Dedicated to clean code, resilient systems,
       and seamless user experiences.
     </>
@@ -141,7 +141,7 @@ const about = {
     institutions: [
       {
         name: "Computer Science & Engineering",
-        description: <>Bachelor's degree with focus on software engineering and systems design.</>,
+        description: <>Bachelor&apos;s degree with focus on software engineering and systems design.</>,
       },
       {
         name: "Advanced Distributed Systems & AI Engineering",
